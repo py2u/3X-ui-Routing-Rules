@@ -18,6 +18,18 @@
 
 📦 [查看完整 GitHub 仓库](https://github.com/py2u/3X-ui-Routing-Rules)
 
+### 🔗 可直接读取的 Raw URL
+
+如果 3x-ui 或其他工具需要通过 URL 读取纯 JSON，请使用下面这个地址：
+
+```text
+https://raw.githubusercontent.com/py2u/3X-ui-Routing-Rules/main/routing.json
+```
+
+👉 [点击测试 Raw 配置 URL](https://raw.githubusercontent.com/py2u/3X-ui-Routing-Rules/main/routing.json)
+
+⚠️ `github.com/.../blob/main/...` 是网页预览地址；程序读取配置时应使用 `raw.githubusercontent.com/...` 地址。
+
 这是一份面向个人使用的 Xray routing 模板，适用于通过 3x-ui 管理 Xray 服务端的场景。
 
 > 🧩 **定位**：这是 routing 层配置，不是包含节点密码、UUID 和 Reality 私钥的完整生产配置。
