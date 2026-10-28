@@ -1,4 +1,5 @@
 # Never commit production configuration or credentials.
+.DS_Store
 config.json
 *.secret.json
 *.private.json
