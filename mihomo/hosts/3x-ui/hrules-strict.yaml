@@ -1,0 +1,90 @@
+# 3x-ui / Mihomo routing profile
+# Raw URL:
+# https://raw.githubusercontent.com/py2u/3X-ui-Routing-Rules/main/mihomo/hosts/3x-ui/hrules-strict.yaml
+
+proxy-groups:
+  - name: "🌍 海外应用 [场景]"
+    type: select
+    proxies:
+      - "DIRECT"
+    include-all-proxies: true
+
+  - name: "📺 流媒体 [场景]"
+    type: select
+    proxies:
+      - "DIRECT"
+    include-all-proxies: true
+
+  - name: "🤖 AI 服务 [场景]"
+    type: select
+    proxies:
+      - "DIRECT"
+    include-all-proxies: true
+
+  - name: "🛠️ GitHub [场景]"
+    type: select
+    proxies:
+      - "DIRECT"
+    include-all-proxies: true
+
+  - name: "✈️ Telegram [场景]"
+    type: select
+    proxies:
+      - "DIRECT"
+    include-all-proxies: true
+
+  - name: "🚀 漏网之鱼 [自选]"
+    type: select
+    proxies:
+      - "DIRECT"
+    include-all-proxies: true
+
+rules:
+  # 🏠 私有地址直连
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+
+  # 🚫 广告拦截
+  - GEOSITE,category-ads-all,REJECT
+
+  # 🇨🇳 中国大陆域名直连
+  - GEOSITE,CN,DIRECT
+
+  # 🤖 AI 服务代理
+  - 'DOMAIN-SUFFIX,openai.com,🤖 AI 服务 [场景]'
+  - 'DOMAIN-SUFFIX,chatgpt.com,🤖 AI 服务 [场景]'
+  - 'DOMAIN-SUFFIX,oaistatic.com,🤖 AI 服务 [场景]'
+  - 'DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI 服务 [场景]'
+  - 'DOMAIN-SUFFIX,anthropic.com,🤖 AI 服务 [场景]'
+  - 'DOMAIN-SUFFIX,claude.ai,🤖 AI 服务 [场景]'
+  - 'DOMAIN-SUFFIX,gemini.google.com,🤖 AI 服务 [场景]'
+  - 'DOMAIN-SUFFIX,perplexity.ai,🤖 AI 服务 [场景]'
+
+  # ▶️ Google / YouTube / 流媒体代理
+  - 'DOMAIN-SUFFIX,google.com,🌍 海外应用 [场景]'
+  - 'DOMAIN-SUFFIX,googleapis.com,🌍 海外应用 [场景]'
+  - 'DOMAIN-SUFFIX,gstatic.com,🌍 海外应用 [场景]'
+  - 'DOMAIN-SUFFIX,youtube.com,📺 流媒体 [场景]'
+  - 'DOMAIN-SUFFIX,googlevideo.com,📺 流媒体 [场景]'
+  - 'DOMAIN-SUFFIX,ytimg.com,📺 流媒体 [场景]'
+
+  # 🛠️ GitHub 代理
+  - 'DOMAIN-SUFFIX,github.com,🛠️ GitHub [场景]'
+  - 'DOMAIN-SUFFIX,githubusercontent.com,🛠️ GitHub [场景]'
+  - 'DOMAIN-SUFFIX,githubassets.com,🛠️ GitHub [场景]'
+
+  # ✈️ Telegram 代理
+  - 'DOMAIN-SUFFIX,telegram.org,✈️ Telegram [场景]'
+  - 'DOMAIN-SUFFIX,t.me,✈️ Telegram [场景]'
+  - 'DOMAIN-SUFFIX,telegram.me,✈️ Telegram [场景]'
+
+  # 🇨🇳 中国大陆 IP 直连
+  - GEOIP,CN,DIRECT,no-resolve
+
+  # 🌍 其他流量走自选代理组
+  - 'MATCH,🚀 漏网之鱼 [自选]'

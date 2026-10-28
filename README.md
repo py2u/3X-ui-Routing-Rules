@@ -28,6 +28,20 @@
 
 ⚠️ `github.com/.../blob/main/...` 是网页预览地址；程序读取配置时应使用 `raw.githubusercontent.com/...` 地址。
 
+### 🟣 Mihomo / Clash YAML URL
+
+按照 Mihomo/Clash 配置格式提供的 YAML 版本：
+
+🔗 https://raw.githubusercontent.com/py2u/3X-ui-Routing-Rules/main/mihomo/hosts/3x-ui/hrules-strict.yaml
+
+👉 [查看 Mihomo YAML 文件](https://github.com/py2u/3X-ui-Routing-Rules/blob/main/mihomo/hosts/3x-ui/hrules-strict.yaml)
+
+📌 使用说明：
+
+- 🟢 Xray / 3x-ui 原生配置：使用上面的 `routing.json`
+- 🟣 Mihomo / Clash 配置：使用这个 `hrules-strict.yaml`
+- ⚠️ 两种文件格式不能互相替代
+
 这是一份面向个人使用的 Xray routing 模板，适用于通过 3x-ui 管理 Xray 服务端的场景。
 
 > 🧩 **定位**：这是 routing 层配置，不是包含节点密码、UUID 和 Reality 私钥的完整生产配置。
