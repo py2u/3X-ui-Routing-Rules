@@ -22,9 +22,7 @@
 
 如果 3x-ui 或其他工具需要通过 URL 读取纯 JSON，请使用下面这个地址：
 
-```text
-https://raw.githubusercontent.com/py2u/3X-ui-Routing-Rules/main/routing.json
-```
+🔗 https://raw.githubusercontent.com/py2u/3X-ui-Routing-Rules/main/routing.json
 
 👉 [点击测试 Raw 配置 URL](https://raw.githubusercontent.com/py2u/3X-ui-Routing-Rules/main/routing.json)
 
