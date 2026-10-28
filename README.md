@@ -12,6 +12,12 @@
   <code>direct</code> · <code>proxy</code> · <code>block</code>
 </p>
 
+## 📄 直接查看配置文件
+
+👉 [打开 routing.json](https://github.com/py2u/3X-ui-Routing-Rules/blob/main/routing.json)
+
+📦 [查看完整 GitHub 仓库](https://github.com/py2u/3X-ui-Routing-Rules)
+
 这是一份面向个人使用的 Xray routing 模板，适用于通过 3x-ui 管理 Xray 服务端的场景。
 
 > 🧩 **定位**：这是 routing 层配置，不是包含节点密码、UUID 和 Reality 私钥的完整生产配置。
