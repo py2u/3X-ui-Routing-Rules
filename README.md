@@ -42,6 +42,17 @@
 - 🟣 Mihomo / Clash 配置：使用这个 `hrules-strict.yaml`
 - ⚠️ 两种文件格式不能互相替代
 
+### 🤖 AI 场景的 Google 访问
+
+AI 场景不仅包含 OpenAI、Claude 和 Gemini 页面，还将以下 Google 相关域名一起分配到 `🤖 AI 服务 [场景]`：
+
+- 🔐 Google 登录：`accounts.google.com`、`oauth2.googleapis.com`
+- 🧠 Gemini / AI Studio：`gemini.google.com`、`aistudio.google.com`、`ai.google.dev`
+- 🔌 Google AI API：`generativelanguage.googleapis.com`、`googleapis.com`
+- 🧩 静态资源：`gstatic.com`、`googleusercontent.com`
+
+这样可以避免 AI 页面、登录接口和模型 API 被分到不同代理组。YouTube 视频仍单独使用 `📺 流媒体 [场景]`。
+
 这是一份面向个人使用的 Xray routing 模板，适用于通过 3x-ui 管理 Xray 服务端的场景。
 
 > 🧩 **定位**：这是 routing 层配置，不是包含节点密码、UUID 和 Reality 私钥的完整生产配置。
