@@ -1,0 +1,10 @@
+# Never commit production configuration or credentials.
+config.json
+*.secret.json
+*.private.json
+.env
+.env.*
+*.key
+*.pem
+*.crt
+*.log

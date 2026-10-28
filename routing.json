@@ -1,0 +1,86 @@
+{
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "ruleTag": "🏠-private-direct",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "ruleTag": "🚫-ads-block",
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "ruleTag": "🇨🇳-cn-domain-direct",
+        "domain": [
+          "geosite:cn"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "ruleTag": "🤖-ai-proxy",
+        "domain": [
+          "domain:openai.com",
+          "domain:chatgpt.com",
+          "domain:oaistatic.com",
+          "domain:oaiusercontent.com",
+          "domain:anthropic.com",
+          "domain:claude.ai",
+          "domain:gemini.google.com",
+          "domain:perplexity.ai"
+        ],
+        "outboundTag": "proxy"
+      },
+      {
+        "type": "field",
+        "ruleTag": "▶️-google-youtube-proxy",
+        "domain": [
+          "domain:google.com",
+          "domain:googleapis.com",
+          "domain:gstatic.com",
+          "domain:googlevideo.com",
+          "domain:youtube.com",
+          "domain:ytimg.com"
+        ],
+        "outboundTag": "proxy"
+      },
+      {
+        "type": "field",
+        "ruleTag": "✈️-telegram-github-proxy",
+        "domain": [
+          "domain:telegram.org",
+          "domain:t.me",
+          "domain:telegram.me",
+          "domain:github.com",
+          "domain:githubusercontent.com",
+          "domain:githubassets.com"
+        ],
+        "outboundTag": "proxy"
+      },
+      {
+        "type": "field",
+        "ruleTag": "🇨🇳-cn-ip-direct",
+        "ip": [
+          "geoip:cn"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "ruleTag": "🌍-fallback-proxy",
+        "network": "tcp,udp",
+        "outboundTag": "proxy"
+      }
+    ]
+  }
+}
